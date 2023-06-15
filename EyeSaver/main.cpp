@@ -1,8 +1,8 @@
 #include <Windows.h>
 #include <string>
 #define IDT_TIMER1 1
-#define SHORT_INTERVAL 3000
-#define LONG_INTERVAL 5000
+#define SHORT_INTERVAL 20'000
+#define LONG_INTERVAL 1'200'000
 #define MINIMIZED 0
 #define MAXIMIZED 1
 
