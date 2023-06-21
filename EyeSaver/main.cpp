@@ -28,6 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 		IDT_TIMER1,            
 		LONG_INTERVAL,                  
 		(TIMERPROC)NULL);
+	PostMessage(hwnd, WM_SYSCOMMAND, SC_MINIMIZE, 0);
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
 		TranslateMessage(&msg);
@@ -114,8 +115,8 @@ HWND CreateFullScreenWindow(HINSTANCE hInstance)
 	return CreateWindow(szAppName,
 		NULL,
 		WS_POPUP | WS_VISIBLE,
-		mi.rcMonitor.right,
-		mi.rcMonitor.bottom,
+		mi.rcMonitor.left,
+		mi.rcMonitor.top,
 		mi.rcMonitor.right - mi.rcMonitor.left,
 		mi.rcMonitor.bottom - mi.rcMonitor.top,
 		hwnd, NULL, hInstance, 0);
